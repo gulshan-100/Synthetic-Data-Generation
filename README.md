@@ -132,37 +132,39 @@ def generate_review_with_temperature(model, tokenizer, seed_text, max_sequence_l
         token_list = pad_sequences([token_list[0]], maxlen=max_sequence_len - 1, padding='pre')
     
     return generated_text.strip()
+```
 
 ### 9 KEY QUESTIONS
+**1. Choice of Model Architecture**
 
-**1. Why was the model/architecture used?**
-The model architecture chosen for this project combines Bidirectional LSTM and an Attention Mechanism. The Bidirectional LSTM is effective for sequence prediction tasks, allowing the model to learn contextual information from both past and future states of the input sequences. This is particularly useful for generating coherent and contextually relevant reviews. The Attention Mechanism enhances the model's ability to focus on specific parts of the input sequence that are more relevant for generating the output, improving the quality of the generated text. This combination aims to capture the sequential dependencies and contextual relationships in the review data effectively.
+The LSTM with attention architecture was chosen for its ability to:
 
-**2. What were the different factors considered for generating this dataset? **
-Several key factors were considered for generating the synthetic dataset:
+- Capture long-term dependencies in text
+- Focus on relevant input parts during word generation
+- Maintain coherence and context in generated reviews
 
-Length Variation: Reviews of varying lengths were produced, specifically at 10, 20, and 30 words, to create a diverse set of review lengths.
-Temperature Variation: Different temperature settings (0.7, 1.0, 1.5) were used during generation to influence the creativity and randomness of the reviews.
-Multiple Seed Texts: Various seed texts were employed to provide a broader context and variation in the generated reviews.
-Incorporation of Product Ratings: Ratings were included to simulate user feedback, impacting the sentiment and content of the generated reviews.
+**2. Factors Considered in Dataset Generation**
 
-**3. How do we measure the efficacy of a synthetic dataset?**
-The efficacy of a synthetic dataset can be measured using several criteria:
+- Length variation (10, 20, 30 words)
+- Temperature variation (0.7, 1.0, 1.5)
+- Multiple seed texts
+- Incorporation of product ratings
 
-Quality of Generated Text (Using BLEU Score): Assessing the coherence, fluency, and relevance of the generated reviews compared to real human written reviews.
-Diversity of Content: Evaluating the variability in lengths, rating and temperature of the generated reviews to ensure a broad representation of user experiences.
-Model Performance
+**3. Measuring Synthetic Dataset Efficacy**
 
-4. How do we ensure the synthetic dataset generated is inspired by a source dataset but not an exact replica?
-To ensure that the synthetic dataset is inspired by the source dataset without being an exact replica, several techniques were employed:
+- BLEU score: Comparison with real reviews
+- Human evaluation: Manual coherence and realism assessment
+- Downstream task performance: Comparative model training
 
-Text Cleaning and Preprocessing: By using lemmatization and removing stopwords, we transformed the text data into a more generalized form, reducing the likelihood of directly replicating specific phrases or sentences.
-Variability in Generation: Introducing randomness in the text generation process, such as using temperature sampling, allows for varied outputs from the model, leading to unique reviews each time.
-Controlled Parameters: Using parameters like review length and temperature during generation helps create diverse outputs that are stylistically and contextually different from the source dataset.
+**4. Ensuring Inspired but Not Replicated Data**
 
-5. What were the top challenges in solving for this problem statement?
-The key challenges encountered during the project included:
+- Temperature-based sampling for randomness
+- Combining varied seed texts, lengths, and temperatures
+- Attention mechanism for creative pattern combinations
 
-Data Quality: Ensuring that the dataset used for training was clean, relevant, and diverse enough to train a robust model. Handling missing values and ensuring balanced data distribution was critical.
-Evaluation of Generated Text: Developing effective criteria for assessing the quality and relevance of the synthetic reviews proved challenging, as subjective measures (like human judgment) can vary significantly.
-Resource Constraints: Training deep learning models, particularly with large datasets, can be resource-intensive, requiring careful management of computational resources and time.
+**5. Top Challenges Faced**
+
+- Integrating product ratings in generation
+- Maintaining appropriate review structure
+- Avoiding exact training data replication
+- Managing computational resource demands
