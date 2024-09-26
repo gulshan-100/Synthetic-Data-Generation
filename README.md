@@ -33,6 +33,9 @@ This project addresses the challenge of limited datasets in AI system training b
 * Clean text data (lemmatization, stop word removal)
 * Combine 'title' and 'text' into 'combined_text'
 
+![Word Count of Reviews](https://github.com/gulshan-100/Synthetic-Data-Generation/blob/main/Images/download%20(1).png)
+
+
 
 
 ### Text Processing
@@ -111,6 +114,8 @@ Added additional dense layers for better feature extraction
 
 * Trained up to 80 epochs with early stopping
 * Decreasing training loss indicates successful learning
+
+![Training Performance](https://github.com/gulshan-100/Synthetic-Data-Generation/blob/main/Images/download%20(2).png)
 
 ### Generated Reviews
 
