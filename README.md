@@ -1,4 +1,4 @@
-# Synthetic Review Generation using NLP and Deep Learning
+# Synthetic Review Generation using NLP 
 
 ## 1. Introduction
 
