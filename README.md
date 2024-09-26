@@ -71,17 +71,18 @@ This project addresses the challenge of limited datasets in AI system training b
 
 #### 1. LSTM (Long Short-Term Memory)
 
-**Implementation:** Replaced RNN layer with LSTM layer
+**Implementation:** RNN layer with LSTM 
 
 **Results:**
 Improvement in text coherence
 Still struggling with maintaining context over longer sequences and lot of repetitive text.
 
+**Conclusion:**
+LSTM showed promise but still fell short of generating high-quality, diverse reviews.
+
 ![LSTM Output](https://github.com/gulshan-100/Synthetic-Data-Generation/blob/main/Images/output-LSTM.png)
 
 
-**Conclusion:**
-LSTM showed promise but still fell short of generating high-quality, diverse reviews.
 
 #### 2. Bidirectional LSTM
 **Implementation:** Upgraded to Bidirectional LSTM
@@ -130,9 +131,10 @@ Added additional dense layers for better feature extraction
 
 1. The LSTM with attention architecture was chosen for its ability to:
 
-* Capture long-term dependencies in text
-* ocus on relevant input parts during word generation
+* Capture long term dependencies in text
+* Focus on relevant input parts during word generation
 * Maintain coherence and context in generated reviews
+* Good BLEU score
 
 2. Factors Considered in Dataset Generation
 
@@ -143,18 +145,18 @@ Added additional dense layers for better feature extraction
 
 3. Measuring Synthetic Dataset Efficacy
 
-BLEU score: Comparison with real reviews
-Human evaluation: Manual coherence and realism assessment
-Downstream task performance: Comparative model training
+* BLEU score: Comparison with real reviews
+* Human evaluation: Manual coherence and realism assessment
+* Downstream task performance: Comparative model training
 
 4. Ensuring Inspired but Not Replicated Data
 
-* Temperature-based sampling for randomness
+* Temperature based sampling for randomness
 * Combining varied seed texts, lengths, and temperatures
 
 5. Top Challenges Faced
 
-* Generating Quality reviews
+* Generation of Quality reviews
 * Integrating product ratings in generation
 * Maintaining appropriate review structure
 * Managing computational resource demands
