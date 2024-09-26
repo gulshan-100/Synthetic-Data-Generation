@@ -68,17 +68,8 @@ This project addresses the challenge of limited datasets in AI system training b
 ### Experimentation Details: Review Generation Model Evolution
 
 
-#### 1. RNN (Recurrent Neural Network) Implementation:
 
-Started with a basic RNN architecture
-Used simple embedding layer followed by RNN layer
-
-**Results:** Generated text was highly repetitive
-
-**Conclusion:**
-RNN unable to capture the complexity required for realistic review generation.
-
-#### 2. LSTM (Long Short-Term Memory)
+#### 1. LSTM (Long Short-Term Memory)
 
 **Implementation:** Replaced RNN layer with LSTM layer
 
@@ -86,11 +77,13 @@ RNN unable to capture the complexity required for realistic review generation.
 Improvement in text coherence
 Still struggling with maintaining context over longer sequences and lot of repetitive text.
 
+![LSTM Output](https://github.com/gulshan-100/Synthetic-Data-Generation/blob/main/Images/output-LSTM.png)
+
 
 **Conclusion:**
 LSTM showed promise but still fell short of generating high-quality, diverse reviews.
 
-#### 3. Bidirectional LSTM
+#### 2. Bidirectional LSTM
 **Implementation:** Upgraded to Bidirectional LSTM
 Added additional dense layers for better feature extraction
 
@@ -98,7 +91,7 @@ Added additional dense layers for better feature extraction
 
 **Conclusion:** Bidirectional LSTM showed significant improvement, but still room for enhancement.
 
-#### 4. Attention Mechanism
+#### 3. Attention Mechanism
 **Implementation:** Integrated attention mechanism with Bidirectional LSTM. Used self-attention to focus on relevant parts of input sequence
 
 **Results:**
@@ -106,7 +99,7 @@ Added additional dense layers for better feature extraction
 * Substantial improvement in text quality and coherence
 * Generated reviews showed better context awareness
 *Significant increase in BLEU scores
-
+![Output Attention40](https://github.com/gulshan-100/Synthetic-Data-Generation/blob/main/Images/output-attention40.png)
 
 
 ## Results and Analysis
